@@ -71,7 +71,7 @@ function loadAndProcessImage(image) {
 }
 
 function loadModelAndPredict(image) {
-    tf.loadLayersModel('http://localhost:8080/model.json').then(pretrainedModel => {
+    tf.loadLayersModel('/model.json').then(pretrainedModel => {
         loadImage(image).then(img => {
             const processedImage = loadAndProcessImage(img);
             const prediction = pretrainedModel.predict(processedImage);
